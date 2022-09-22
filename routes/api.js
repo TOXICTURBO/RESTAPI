@@ -1801,10 +1801,12 @@ router.get('/tools/encode', async (req, res, next) => {
                  creator : `${creator}`,
                  result : `${body}`
              })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
+         } catch (e) {
+             console.log('Error :', color(e,'red'))
+             res.json(loghandler.invalidlink)
+         }
+     })
+   } else {
 res.json(loghandler.invalidKey)
 }
 })
@@ -1823,10 +1825,12 @@ router.get('/tools/decode', async (req, res, next) => {
                  creator : `${creator}`,
                  result : `${body}`
              })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
+         } catch (e) {
+             console.log('Error :', color(e,'red'))
+             res.json(loghandler.invalidlink)
+         }
+     })
+   } else {
 res.json(loghandler.invalidKey)
 }
 })
