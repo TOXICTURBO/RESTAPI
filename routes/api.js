@@ -1787,6 +1787,50 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/tools/encode', async (req, res, next) => {
+    var Apikey = req.query.apikey,
+        text = req.query.text
+
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+     if (!text) return res.json(loghandler.nottext)
+     request(`https://api.popcat.xyz/encode?text=${text}`, function (error, response, body) {
+         try {
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result : `${body}`
+             })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/tools/decode', async (req, res, next) => {
+    var Apikey = req.query.apikey,
+        text = req.query.text
+
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+     if (!text) return res.json(loghandler.nottext)
+     request(`https://api.popcat.xyz/decode?binary=${text}`, function (error, response, body) {
+         try {
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result : `${body}`
+             })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
 router.get('/base', async (req, res, next) => {
 	var type = req.query.type,
 		encode = req.query.encode,
