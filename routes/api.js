@@ -8,7 +8,7 @@ var zahirr = db.get("zahirr");
 	console.log('')  
 }
  
-var creator = "Rey"
+var creator = "TurboMods"
 var neoxr = "yntkts"
 var zeks = "administrator"
 var zeks2 = "apivinz"
@@ -227,18 +227,18 @@ Akhir Pesan Error
 
 //router.use(favicon(__path + "/views/favicon.ico"));
 
-const listkey = ["apirey", "APIKEY", "ditofficial"];
+const listkey = ["TeamToxic", "Turbo", "TurboMods"];
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
   if(listkey.includes(key)) {
     res.json({
-      message: 'apikey sudah terdaftar'
+      message: 'apikey is registered'
     });
   } else {
     listkey.push(key);
     res.json({
-      message: `berhasil mendaftarkan ${key} Kedatabase apikey`
+      message: `successfully registered ${key}`
     });
   }
 });
@@ -249,12 +249,12 @@ router.delete("/apikey", async(req, res, next) => {
 	const key = req.query.delete;
 	if(listkey.includes(key)) {
 		res.json({
-			message: 'apikey tidak ada sebelumnya'
+			message: 'apikey didnt exist before'
 			})
 			} else {
 	listkey.splice(key, 1)
 	res.json({
-		message: 'apikey berhasil dihapus' 
+		message: 'apikey deleted successfully' 
 });
  }
 });
