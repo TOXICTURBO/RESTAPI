@@ -227,7 +227,7 @@ Akhir Pesan Error
 
 //router.use(favicon(__path + "/views/favicon.ico"));
 
-const listkey = ["TeamToxic", "Turbo", "TurboMods"];
+const listkey = ["TeamToxic", "ToxicLeo", "Turbo", "TurboMods"];
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
