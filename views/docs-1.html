@@ -495,40 +495,56 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                        <!-- Earnings (Annual) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card h-50">
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
+                                    <div class="row align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Visitor (Unique)</div>
-                                            <div class="h5 mb-0 font-weight-bold">8372</div>
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Visitor</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="visitor">0</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa fa-user faa-ring animated fa-2x text-primary"></i>
+                                            <i class="fas fa-eye fa-2x text-primary"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Pending Requests Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-50">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Battery</div>
+                                            <span id="battery_level" class="h5 mb-0 font-weight-bold">Waiting... </span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-battery-full" ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card h-50">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold">8372</div>
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Time</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="row-no-guttersalign-items-center">00:00:00</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="text-xsfont-weight-boldtext-uppercase-mb-1">Good morning</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar faa-wrench animated fa-2x text-primary"></i>
+                                            <i class="fas fa-calendar fa-2x text-primary"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div id="findipurl"> <a href="find-ip.net" ></a></div>
+
+                <script defer src="https://api.find-ip.net/widget.js?width=220&bg=%23152232&border=%230e1824&textcol=%23d3d5f3&language=0&system=0&"></script>
                     <!--Row-->
                     <div class="row">
                         <div class="col-lg-12 text-center">
