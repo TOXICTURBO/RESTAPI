@@ -106,113 +106,113 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter apikey'
+        message: 'please enter apikey'
     },
     noturl: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter url'
+        message: 'please enter url'
     },
     notgcname: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukkan paramer gcname'
+        message: 'please enter group name'
         },
     notgcicon: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukkan paramer gcicon'
+        message: 'please enter group icon url'
         },
     notpp: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukkan paramer pp'
+        message: 'please enter profile photo url'
         },
     notbg: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukkan paramer bg'
+        message: 'please enter background url'
         },
     notmemberCount: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukkan paramer memberCount'
+        message: 'please enter member count'
         },
     notquery: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukkan parameter query'
+        message: 'please enter query'
         },
     notkata: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter kata'
+        message: 'please enter word'
     },
     nottext: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter text'
+        message: 'please enter text'
     },
     nottext2: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter text2'
+        message: 'please enter text2'
     },
     notnabi: {
         status: false,
         creator: `${creator}`,
         code: 406, 
-        message: 'masukan parameter nabi'
+        message: 'enter the parameters of the prophet'
     },
     nottext3: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter text3'
+        message: 'please enter text3'
     },
     nottheme: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter theme'
+        message: 'please enter theme'
     },
     notusername: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter username'
+        message: 'please enter username'
     },
     notvalue: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter value'
+        message: 'please enter value'
     },
     invalidKey: {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'apikey invalid'
+        message: 'apikey invalid contact turbo mods to get apikey'
     },
     invalidlink: {
         status: false,
         creator: `${creator}`,
-        message: 'error, mungkin link anda tidak valid.'
+        message: 'error, maybe your link is not valid.'
     },
     invalidkata: {
         status: false,
         creator: `${creator}`,
-        message: 'error, mungkin kata tidak ada dalam api.'
+        message: 'error, maybe the word is not in the fire.'
     },
     error: {
         status: false,
