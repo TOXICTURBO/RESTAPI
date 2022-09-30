@@ -1628,6 +1628,29 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/random/sts', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+        if(listkey.includes(Apikey)){
+
+       fetch(encodeURI(`https://api-mask-ser.herokuapp.com/api/randomvideo/msts`))
+        .then(response => response.json())
+        .then(hasil => {
+        var result = hasil.result;
+        var video = result
+             res.json({
+                 creator : `${creator}`,
+                 video
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
 router.get('/random/katabijak', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
@@ -1670,6 +1693,21 @@ router.get('/random/pantun', async (req, res, next) => {
 } else {
 res.json(loghandler.invalidKey)
 }
+})
+
+router.get('/random/statusVideo', async (req, res, next) => {
+
+	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Sts.json')
+	let random = sts[Math.floor(Math.random() * sts.length)]
+
+	res.json({
+	status: true,
+	creator: `${creator}`,
+		result: {
+			video: random,
+					}
+	})
+
 })
 
 router.get('/random/fancytext', async (req, res, next) => {
@@ -1813,12 +1851,12 @@ res.json(loghandler.invalidKey)
 
 router.get('/tools/decode', async (req, res, next) => {
     var Apikey = req.query.apikey,
-        text = req.query.text
+        binary = req.query.binary
 
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-     if (!text) return res.json(loghandler.nottext)
-     request(`https://api.popcat.xyz/decode?binary=${text}`, function (error, response, body) {
+     if (!binary) return res.json(loghandler.nottext)
+     request(`https://api.popcat.xyz/decode?binary=${binary}`, function (error, response, body) {
          try {
              res.json({
                  status : true,
@@ -7486,7 +7524,7 @@ router.get('/cekapikey', async(req, res, next) => {
       status: 'active',
       creator: `${creator}`,
       apikey: `${apikey}`,
-      message: 'APIKEY ACTIVE LIMIT 999'    
+      message: 'APIKEY IS ACTIVE ✔️'    
     })
   } else {
     res.json(loghandler.invalidKey)
