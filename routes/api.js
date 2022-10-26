@@ -1630,22 +1630,15 @@ res.json(loghandler.invalidKey)
 
 router.get('/random/sts', async (req, res, next) => {
         var Apikey = req.query.apikey
+            
 	if(!Apikey) return res.json(loghandler.notparam)
-        if(listkey.includes(Apikey)){
+	if(listkey.includes(Apikey)){
 
-       fetch(encodeURI(`https://api-mask-ser.herokuapp.com/api/randomvideo/msts`))
-        .then(response => response.json())
-        .then(hasil => {
-        var result = hasil.result;
-        var video = result
-             res.json({
-                 creator : `${creator}`,
-                 video
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
+  const sts = JSON.parse(fs.readFileSync(__path +'/data/sts.json'));
+  const randahegao = sts[Math.floor(Math.random() * sts.length)];
+  data = await fetch(randahegao).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/sts.mp4', data)
+  res.sendFile(__path +'/tmp/sts.mp4')
 } else {
 res.json(loghandler.invalidKey)
 }
