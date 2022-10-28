@@ -971,7 +971,7 @@ router.get('/download/ytmp32', async(req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)){
-    fetch(encodeURI(`http://kocakz.herokuapp.com/api/media/ytaudio?url=${url}`))
+    fetch(encodeURI(`https://api.lolhuman.xyz/api/ytaudio?apikey=5e0b5cf41125348368c4f017&url=${url}`))
     .then(response => response.json())
         .then(hasil => {
 
@@ -998,7 +998,34 @@ router.get('/download/ytmp42', async(req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)){
-    fetch(encodeURI(`http://kocakz.herokuapp.com/api/media/ytvid?url=${url}`))
+    fetch(encodeURI(`https://api.lolhuman.xyz/api/ytvideo?apikey=5e0b5cf41125348368c4f017&url=${url}`))
+    .then(response => response.json())
+        .then(hasil => {
+
+        var result = hasil.getVideo;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/download/xnxx_download', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const url = req.query.url;
+  
+  if(!url) return res.json(loghandler.noturl)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)){
+    fetch(encodeURI(`https://api.lolhuman.xyz/api/xnxx?apikey=5e0b5cf41125348368c4f017&url=${url}`))
     .then(response => response.json())
         .then(hasil => {
 
